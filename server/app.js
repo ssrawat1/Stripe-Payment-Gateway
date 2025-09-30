@@ -21,8 +21,8 @@ app.get('/create/checkout-session', async (req, res, next) => {
 });
 
 app.post('/webhook/verify-payment', (req, res, next) => {
-  console.log(req.headers)
-  // console.log('Stripe Payment Status(Webhook):', req.body);
+  console.log(req.headers);
+  console.log('Stripe Payment Status(Webhook):', req.body);
   if (req.body) {
     return res.status(200).json({ message: 'Payment has been successfully received' });
   }
@@ -32,14 +32,16 @@ app.post('/webhook/verify-payment', (req, res, next) => {
 app.post('/verify-payment', async (req, res, next) => {
   console.log('Payment Verify Request...');
   const id = req.query;
-  console.log({id})
+  console.log({ id });
   const paymentStatus = await verifyCheckoutSession(id);
   if (paymentStatus === 'paid') {
     return res
       .status(201)
       .json({ status: 'success', message: 'You have been purchased the course successfully' });
   }
-  return res.status(404).json({ status: 'failed', message: 'sorry,for our inconvenience try again' });
+  return res
+    .status(404)
+    .json({ status: 'failed', message: 'sorry,for our inconvenience try again' });
 });
 
 const PORT = 4000;
