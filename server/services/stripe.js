@@ -1,7 +1,9 @@
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
- 
+const webhookSecret = process.env.WEBHOOK_SECRET;
+
+export const stripe = new Stripe(process.env.STRIPE_API_KEY);
+
 export const createCheckoutSession = async () => {
   try {
     const { url } = await stripe.checkout.sessions.create({
@@ -11,7 +13,7 @@ export const createCheckoutSession = async () => {
         allowed_countries: ['IN', 'RU', 'PA', 'US', 'CH', 'NP', 'BD'],
       },
       metadata: {}, // same as Razorpay notes
-      ui_mode:'hosted',
+      ui_mode: 'hosted',
       line_items: [
         {
           adjustable_quantity: { enabled: true },
@@ -44,4 +46,8 @@ export const verifyCheckoutSession = async ({ ch_id }) => {
   } catch (error) {
     console.log('error while verifying checkout session:', error);
   }
+};
+
+export const verifyWebhookSignature = async ({ sign, data }) => {
+  return stripe.webhooks.constructEvent(data, sign, webhookSecret);
 };
