@@ -35,17 +35,16 @@ No real payment or sensitive information is included.
 
 ## 🗂️ File Structure
 
-📂 client
- ┣ index.html
- ┣ script.js
- ┣ success.html
- ┣ verify.html
- ┗ verify.js
-📂 server
- ┣ services
- ┃ ┗ stripe.js
- ┣ .env
- ┣ .gitignore
- ┣ app.js
- ┣ data.json
- ┗ README.md
+📦 Stripe-Payment-Gateway
+┣ 📂 server
+┃ ┣ 📄 index.js # Express server entry
+┃ ┣ 📄 app.js # Core application logic
+┃ ┣ 📄 webhook.js # Stripe webhook handler
+┃ ┣ 📄 data.json # ✅ Dummy Stripe Checkout Session (test data)
+┃ ┣ 📄 .env.example # ✅ Example env file (safe to share)
+┃ ┗ 📄 .env # ⚠️ Real secrets (never commit)
+┣ 📂 client
+┃ ┣ 📄 index.html # Checkout page
+┃ ┣ 📄 verify.html # Payment verification page
+┃ ┗ 📄 script.js # Client-side logic
+┗ 📄 README.md
