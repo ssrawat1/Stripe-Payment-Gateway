@@ -1,7 +1,37 @@
 import express from 'express';
-import { createCheckoutSession, verifyCheckoutSession } from './services/stripe.js';
+import { writeFile } from 'fs/promises';
+import {
+  createCheckoutSession,
+  verifyCheckoutSession,
+  verifyWebhookSignature,
+} from './services/stripe.js';
 
 const app = express();
+
+app.post('/webhook/verify-payment', express.raw({ type: 'application/json' }), async (req, res) => {
+  const signature = req.headers['stripe-signature'];
+
+  try {
+    const event = await verifyWebhookSignature({ sign: signature, data: req.body });
+    console.log('Event received:', event.type);
+    /* Handling checkout session here */
+    if (event.type === 'checkout.session.completed') {
+      const session = event.data.object;
+
+      if (session.payment_status === 'paid' && session.status === 'complete') {
+        console.log('Payment successful:', session.id);
+        await writeFile('data.json', JSON.stringify(session, null, 2));
+      } else {
+        console.log('Payment not completed yet:', session.id);
+      }
+    }
+
+    res.sendStatus(200);
+  } catch (err) {
+    console.error('Webhook signature verification failed:', err.message);
+    res.sendStatus(400);
+  }
+});
 
 app.use(express.json());
 
@@ -18,15 +48,6 @@ app.get('/create/checkout-session', async (req, res, next) => {
   const url = await createCheckoutSession();
   console.log({ url });
   return res.status(200).json({ url });
-});
-
-app.post('/webhook/verify-payment', (req, res, next) => {
-  console.log(req.headers);
-  console.log('Stripe Payment Status(Webhook):', req.body);
-  if (req.body) {
-    return res.status(200).json({ message: 'Payment has been successfully received' });
-  }
-  return res.status(404).json({ message: 'Payment does not received yet' });
 });
 
 app.post('/verify-payment', async (req, res, next) => {
