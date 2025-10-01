@@ -10,6 +10,7 @@ const app = express();
 
 app.post('/webhook/verify-payment', express.raw({ type: 'application/json' }), async (req, res) => {
   const signature = req.headers['stripe-signature'];
+  console.log(signature);
 
   try {
     const event = await verifyWebhookSignature({ sign: signature, data: req.body });
