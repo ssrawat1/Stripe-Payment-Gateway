@@ -1,0 +1,140 @@
+{
+  "_comment": "This is dummy Stripe Checkout Session data (test mode, safe for demo use).",
+  "id": "cs_test_a10b78wdwr9h94vgd4SzNDj202Jn7bGm9ITCVwKQ6wunSeALDB8oETEOdA",
+  "object": "checkout.session",
+  "adaptive_pricing": {
+    "enabled": true
+  },
+  "after_expiration": null,
+  "allow_promotion_codes": null,
+  "amount_subtotal": 30000,
+  "amount_total": 30000,
+  "automatic_tax": {
+    "enabled": false,
+    "liability": null,
+    "provider": null,
+    "status": null
+  },
+  "billing_address_collection": null,
+  "branding_settings": {
+    "background_color": "#ffffff",
+    "border_style": "rounded",
+    "button_color": "#0074d4",
+    "display_name": "New business sandbox",
+    "font_family": "default",
+    "icon": null,
+    "logo": null
+  },
+  "cancel_url": null,
+  "client_reference_id": null,
+  "client_secret": null,
+  "collected_information": {
+    "business_name": null,
+    "individual_name": null,
+    "shipping_details": {
+      "address": {
+        "city": "Bathinda",
+        "country": "IN",
+        "line1": "A-xyz abc Township Bathinda(Punjab)",
+        "line2": "A-xyz abc Township Bathinda(Punjab)",
+        "postal_code": "123",
+        "state": "xy"
+      },
+      "name": "dummy"
+    }
+  },
+  "consent": null,
+  "consent_collection": null,
+  "created": 1759297518,
+  "currency": "usd",
+  "currency_conversion": null,
+  "custom_fields": [],
+  "custom_text": {
+    "after_submit": null,
+    "shipping_address": null,
+    "submit": null,
+    "terms_of_service_acceptance": null
+  },
+  "customer": null,
+  "customer_creation": "if_required",
+  "customer_details": {
+    "address": {
+      "city": "Bathinda",
+      "country": "IN",
+      "line1": "A-xyz abc Township Bathinda(Punjab)",
+      "line2": "A-xyz abc Township Bathinda(Punjab)",
+      "postal_code": "123",
+      "state": "xy"
+    },
+    "business_name": null,
+    "email": "xyz@gmail.com",
+    "individual_name": null,
+    "name": "xyz",
+    "phone": null,
+    "tax_exempt": "none",
+    "tax_ids": []
+  },
+  "customer_email": null,
+  "discounts": [],
+  "expires_at": 1759383918,
+  "invoice": null,
+  "invoice_creation": {
+    "enabled": false,
+    "invoice_data": {
+      "account_tax_ids": null,
+      "custom_fields": null,
+      "description": null,
+      "footer": null,
+      "issuer": null,
+      "metadata": {},
+      "rendering_options": null
+    }
+  },
+  "livemode": false,
+  "locale": null,
+  "metadata": {},
+  "mode": "payment",
+  "origin_context": null,
+  "payment_intent": "pi_3SDIrM3q2zmPPf4R0haTDKbg",
+  "payment_link": null,
+  "payment_method_collection": "if_required",
+  "payment_method_configuration_details": {
+    "id": "pmc_1SATQ13q2zmPPf4RbiITU9lS",
+    "parent": null
+  },
+  "payment_method_options": {
+    "card": {
+      "request_three_d_secure": "automatic"
+    }
+  },
+  "payment_method_types": ["card", "link"],
+  "payment_status": "paid",
+  "permissions": null,
+  "phone_number_collection": {
+    "enabled": false
+  },
+  "presentment_details": {
+    "presentment_amount": 2760804,
+    "presentment_currency": "inr"
+  },
+  "recovered_from": null,
+  "saved_payment_method_options": null,
+  "setup_intent": null,
+  "shipping_address_collection": {
+    "allowed_countries": ["IN", "RU", "PA", "US", "CH", "NP", "BD"]
+  },
+  "shipping_cost": null,
+  "shipping_options": [],
+  "status": "complete",
+  "submit_type": null,
+  "subscription": null,
+  "success_url": "http://localhost:5500/creating-checkout-session/client/verify.html?session_id={CHECKOUT_SESSION_ID}",
+  "total_details": {
+    "amount_discount": 0,
+    "amount_shipping": 0,
+    "amount_tax": 0
+  },
+  "ui_mode": "hosted",
+  "url": null,
+  "wallet_options": null
+}
