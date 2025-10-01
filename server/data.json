@@ -1,6 +1,5 @@
 {
-  "_comment": "This is dummy Stripe Checkout Session data (test mode, safe for demo use).",
-  "id": "cs_test_a10b78wdwr9h94vgd4SzNDj202Jn7bGm9ITCVwKQ6wunSeALDB8oETEOdA",
+  "id": "cs_test_a1DuhRkNMe7UpQnvMotny52vvowWs4DoMWkaM0iZbMnrI1epoD6Xde16Et",
   "object": "checkout.session",
   "adaptive_pricing": {
     "enabled": true
@@ -35,17 +34,17 @@
       "address": {
         "city": "Bathinda",
         "country": "IN",
-        "line1": "A-xyz abc Township Bathinda(Punjab)",
-        "line2": "A-xyz abc Township Bathinda(Punjab)",
-        "postal_code": "123",
-        "state": "xy"
+        "line1": "A-263 NFL Township Bathinda(Punjab)",
+        "line2": "A-263 NFL Township Bathinda(Punjab)",
+        "postal_code": "151003",
+        "state": "PB"
       },
-      "name": "dummy"
+      "name": "sanjay singh rawat"
     }
   },
   "consent": null,
   "consent_collection": null,
-  "created": 1759297518,
+  "created": 1759295622,
   "currency": "usd",
   "currency_conversion": null,
   "custom_fields": [],
@@ -61,22 +60,22 @@
     "address": {
       "city": "Bathinda",
       "country": "IN",
-      "line1": "A-xyz abc Township Bathinda(Punjab)",
-      "line2": "A-xyz abc Township Bathinda(Punjab)",
-      "postal_code": "123",
-      "state": "xy"
+      "line1": "A-263 NFL Township Bathinda(Punjab)",
+      "line2": "A-263 NFL Township Bathinda(Punjab)",
+      "postal_code": "151003",
+      "state": "PB"
     },
     "business_name": null,
-    "email": "xyz@gmail.com",
+    "email": "ssr911999@gmail.com",
     "individual_name": null,
-    "name": "xyz",
+    "name": "sanjay singh rawat",
     "phone": null,
     "tax_exempt": "none",
     "tax_ids": []
   },
   "customer_email": null,
   "discounts": [],
-  "expires_at": 1759383918,
+  "expires_at": 1759382021,
   "invoice": null,
   "invoice_creation": {
     "enabled": false,
@@ -95,7 +94,7 @@
   "metadata": {},
   "mode": "payment",
   "origin_context": null,
-  "payment_intent": "pi_3SDIrM3q2zmPPf4R0haTDKbg",
+  "payment_intent": "pi_3SDIMS3q2zmPPf4R16qbeKsX",
   "payment_link": null,
   "payment_method_collection": "if_required",
   "payment_method_configuration_details": {
