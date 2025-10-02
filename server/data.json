@@ -1,5 +1,5 @@
 {
-  "id": "cs_test_a1DuhRkNMe7UpQnvMotny52vvowWs4DoMWkaM0iZbMnrI1epoD6Xde16Et",
+  "id": "cs_test_a1CCs7mDSeMbY8k9zMSiyLO8iZtgXIjJFpnsVEaSobA4auv7i2jhogrIWY",
   "object": "checkout.session",
   "adaptive_pricing": {
     "enabled": true
@@ -32,19 +32,19 @@
     "individual_name": null,
     "shipping_details": {
       "address": {
-        "city": "Bathinda",
+        "city": "New Delhi",
         "country": "IN",
-        "line1": "A-263 NFL Township Bathinda(Punjab)",
-        "line2": "A-263 NFL Township Bathinda(Punjab)",
-        "postal_code": "151003",
-        "state": "PB"
+        "line1": "Bada Mohalla Road",
+        "line2": "A/263/12",
+        "postal_code": "110080",
+        "state": "DL"
       },
-      "name": "sanjay singh rawat"
+      "name": "Sahil singh raweat"
     }
   },
   "consent": null,
   "consent_collection": null,
-  "created": 1759295622,
+  "created": 1759383860,
   "currency": "usd",
   "currency_conversion": null,
   "custom_fields": [],
@@ -58,24 +58,24 @@
   "customer_creation": "if_required",
   "customer_details": {
     "address": {
-      "city": "Bathinda",
+      "city": "New Delhi",
       "country": "IN",
-      "line1": "A-263 NFL Township Bathinda(Punjab)",
-      "line2": "A-263 NFL Township Bathinda(Punjab)",
-      "postal_code": "151003",
-      "state": "PB"
+      "line1": "Bada Mohalla Road",
+      "line2": "A/263/12",
+      "postal_code": "110080",
+      "state": "DL"
     },
     "business_name": null,
     "email": "ssr911999@gmail.com",
     "individual_name": null,
-    "name": "sanjay singh rawat",
+    "name": "Sahil singh raweat",
     "phone": null,
     "tax_exempt": "none",
     "tax_ids": []
   },
   "customer_email": null,
   "discounts": [],
-  "expires_at": 1759382021,
+  "expires_at": 1759470260,
   "invoice": null,
   "invoice_creation": {
     "enabled": false,
@@ -94,33 +94,40 @@
   "metadata": {},
   "mode": "payment",
   "origin_context": null,
-  "payment_intent": "pi_3SDIMS3q2zmPPf4R16qbeKsX",
+  "payment_intent": "pi_3SDfJZ3q2zmPPf4R1NgAxaTl",
   "payment_link": null,
   "payment_method_collection": "if_required",
   "payment_method_configuration_details": {
     "id": "pmc_1SATQ13q2zmPPf4RbiITU9lS",
     "parent": null
   },
-  "payment_method_options": {
-    "card": {
-      "request_three_d_secure": "automatic"
-    }
-  },
-  "payment_method_types": ["card", "link"],
+  "payment_method_options": {},
+  "payment_method_types": [
+    "card",
+    "link"
+  ],
   "payment_status": "paid",
   "permissions": null,
   "phone_number_collection": {
     "enabled": false
   },
   "presentment_details": {
-    "presentment_amount": 2760804,
+    "presentment_amount": 2763245,
     "presentment_currency": "inr"
   },
   "recovered_from": null,
   "saved_payment_method_options": null,
   "setup_intent": null,
   "shipping_address_collection": {
-    "allowed_countries": ["IN", "RU", "PA", "US", "CH", "NP", "BD"]
+    "allowed_countries": [
+      "IN",
+      "RU",
+      "PA",
+      "US",
+      "CH",
+      "NP",
+      "BD"
+    ]
   },
   "shipping_cost": null,
   "shipping_options": [],

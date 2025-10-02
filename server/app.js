@@ -9,28 +9,44 @@ import {
 const app = express();
 
 app.post('/webhook/verify-payment', express.raw({ type: 'application/json' }), async (req, res) => {
-  const signature = req.headers['stripe-signature'];
-  console.log(signature);
+  const webhookIps = [
+    '3.18.12.63',
+    '3.130.192.231',
+    '13.235.14.237',
+    '13.235.122.149',
+    '18.211.135.69',
+    '35.154.171.200',
+    '52.15.183.38',
+    '54.88.130.119',
+    '54.88.130.237',
+    '54.187.174.169',
+    '54.187.205.235',
+    '54.187.216.72',
+  ];
+  if (webhookIps.includes(req.headers['x-forwarded-for'])) {
+    const signature = req.headers['stripe-signature'];
+    console.log(signature);
 
-  try {
-    const event = await verifyWebhookSignature({ sign: signature, data: req.body });
-    console.log('Event received:', event.type);
-    /* Handling checkout session here */
-    if (event.type === 'checkout.session.completed') {
-      const session = event.data.object;
+    try {
+      const event = await verifyWebhookSignature({ sign: signature, data: req.body });
+      console.log('Event received:', event.type);
+      /* Handling checkout session here */
+      if (event.type === 'checkout.session.completed') {
+        const session = event.data.object;
 
-      if (session.payment_status === 'paid' && session.status === 'complete') {
-        console.log('Payment successful:', session.id);
-        await writeFile('data.json', JSON.stringify(session, null, 2));
-      } else {
-        console.log('Payment not completed yet:', session.id);
+        if (session.payment_status === 'paid' && session.status === 'complete') {
+          console.log('Payment successful:', session.id);
+          await writeFile('data.json', JSON.stringify(session, null, 2));
+        } else {
+          console.log('Payment not completed yet:', session.id);
+        }
       }
-    }
 
-    res.sendStatus(200);
-  } catch (err) {
-    console.error('Webhook signature verification failed:', err.message);
-    res.sendStatus(400);
+      res.sendStatus(200);
+    } catch (err) {
+      console.error('Webhook signature verification failed:', err.message);
+      res.sendStatus(400);
+    }
   }
 });
 
